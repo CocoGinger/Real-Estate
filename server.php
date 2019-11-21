@@ -3,7 +3,8 @@ session_start();
 if(file_exists('props.php'){
 	require_once 'props.php';
 }
- 
+class Server {
+	public function __coonstruct(){
 // initializing variables
 $username = "";
 $email    = "";
@@ -11,6 +12,10 @@ $errors = array();
 
 // connect to the database
 $db = mysqli_connect(SERVER, USER, PASS, DB);
+	}
+	
+	public function register(){
+		
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -57,6 +62,7 @@ if (isset($_POST['reg_user'])) {
   	header("Location: index.php");
   }
 }
+	}
 
 // ..
 
@@ -85,5 +91,7 @@ if (isset($_POST['login_user'])) {
         }
     }
   }
+}
+   new Server();
   
   ?>
