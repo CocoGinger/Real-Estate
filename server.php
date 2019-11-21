@@ -1,13 +1,16 @@
 <?php
 session_start();
-
+if(file_exists('props.php'){
+	require_once 'props.php';
+}
+ 
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'registration');
+$db = mysqli_connect(SERVER, USER, PASS, DB);
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
